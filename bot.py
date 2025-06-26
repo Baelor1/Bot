@@ -17,7 +17,7 @@ if not TOKEN or " " in TOKEN or "\n" in TOKEN or "=" in TOKEN:
 
 # ✅ Инициализация бота
 bot = Bot(
-    token=TOKEN,
+    token=TOдKEN,
     default=DefaultBotProperties(parse_mode=ParseMode.HTML)
 )
 
