@@ -9,7 +9,7 @@ from aiogram.client.default import DefaultBotProperties  # ✅ Вот это д�
 
 # 🔐 Токен бота
 
-TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 
 # 🧱 Инициализация бота
