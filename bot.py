@@ -11,6 +11,9 @@ from aiogram.client.default import DefaultBotProperties  # ✅ Вот это д�
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
+print(f"🔍 BOT_TOKEN получен: '{BOT_TOKEN}'")
+
+
 
 # 🧱 Инициализация бота
 bot = Bot(
