@@ -5,22 +5,20 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart
 from aiogram.enums import ParseMode
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from aiogram.client.default import DefaultBotProperties  # ✅ Вот это добавили
+from aiogram.client.default import DefaultBotProperties
 
-# 🔐 Токен бота
+# ✅ Получаем токен из переменной окружения
+TOKEN = os.getenv("BOT_TOKEN")
+print(f"🔍 BOT_TOKEN получен: '{TOKEN}'")
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-
-print(f"🔍 BOT_TOKEN получен: '{BOT_TOKEN}'")
-
+# ✅ Проверка токена (очень полезно при деплое)
 if not TOKEN or " " in TOKEN or "\n" in TOKEN or "=" in TOKEN:
-    raise ValueError("❌ BOT_TOKEN некорректен: содержит лишние символы!")
+    raise ValueError("❌ BOT_TOKEN некорректен: содержит пробел, \\n или =")
 
-
-# 🧱 Инициализация бота
+# ✅ Инициализация бота
 bot = Bot(
-    token=BOT_TOKEN,
-    default=DefaultBotProperties(parse_mode=ParseMode.HTML)  # ✅ Здесь убрали types.
+    token=TOKEN,
+    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
 )
 
 dp = Dispatcher()
@@ -50,4 +48,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
