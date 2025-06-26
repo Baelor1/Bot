@@ -13,6 +13,8 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 print(f"🔍 BOT_TOKEN получен: '{BOT_TOKEN}'")
 
+if not TOKEN or " " in TOKEN or "\n" in TOKEN or "=" in TOKEN:
+    raise ValueError("❌ BOT_TOKEN некорректен: содержит лишние символы!")
 
 
 # 🧱 Инициализация бота
