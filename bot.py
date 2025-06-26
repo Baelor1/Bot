@@ -1,4 +1,5 @@
 import asyncio
+
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart
 from aiogram.enums import ParseMode
@@ -6,7 +7,10 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.client.default import DefaultBotProperties  # ✅ Вот это добавили
 
 # 🔐 Токен бота
-BOT_TOKEN = "7748124770:AAGY8aW_FxPsuIKStACuTmQwq8R5w1L14-c"
+import os
+
+TOKEN = os.getenv("BOT_TOKEN")
+
 
 # 🧱 Инициализация бота
 bot = Bot(
